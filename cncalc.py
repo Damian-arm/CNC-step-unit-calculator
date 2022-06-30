@@ -42,6 +42,6 @@ if type=="screw":
 
 
 
-#pasek (iloœæ kroków*mikrokrok)/(skok paska*iloœæ zêbów na zêbatce)
-#œruba (iloœæ kroków*mikrokrok)/(skok œruby)
-#extruder (iloœæ kroków*mikrokrok*prze³o¿enie na zêbatkach)/(pi * œrednica rade³ka w miejscu styku)
+#pasek (ilosc krokow*mikrokrok)/(skok paska*ilosc zebow na zebatce)
+#suba (ilosc krokow*mikrokrok)/(skok suby)
+#extruder (ilosc krokow*mikrokrok*przezenie na zebatkach)/(pi * sednica radelka w miejscu styku)
