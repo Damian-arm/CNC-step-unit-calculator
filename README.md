@@ -14,3 +14,6 @@ V1.1
 
 V1.0
 -calculations for belt and screw pulley
+
+ToDo :
+-create new cnconf file if it already exist
