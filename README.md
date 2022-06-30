@@ -6,10 +6,11 @@ $cd directory
 
 $python ./cncalc.py
 
-Calculate steps / unit :
+V1.2
+-generate config file cnconf.txt
 
--belt
+V1.1
+-added calcularions for extruder
 
--screw
-
--extruder
+V1.0
+-calculations for belt and screw pulley
