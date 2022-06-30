@@ -28,6 +28,13 @@ if type=="belt":
 		print("steps/mm")
 	if unit=="in":
 		print("steps/in")
+	string = input("create configuration file cncofig.txt? 	y/n : ")
+	yn = str(string)
+
+	if yn=="y":
+		with open('cnconfig.txt', 'x') as f:
+			f.write("\nbelt cnc calculation :" + "\n" + "-motor steps per revolution : " + str(rslt1) + "\n" + "-microsteps : " + str(rslt2) + "\n" + "-belt pitch : " + str(rslt3) + "\n" + "-pully number of teeth : " + str(rslt4) + "\n" + str(result) + " steps/" + str(unit) + "\n\n" )
+
 
 if type=="screw":
 	integer = input("motor steps per revolution : ")
@@ -42,6 +49,15 @@ if type=="screw":
 		print("steps/mm")
 	if unit=="in":
 		print("steps/in")
+
+	string = input("create configuration file cncofig.txt? 	y/n : ")
+	yn = str(string)
+
+	if yn=="y":
+		with open('cnconfig.txt', 'x') as f:
+			f.write("screw cnc calculation :" + "\n" + "-motor steps per revolution : " + str(rslt1) + "\n" + "-microsteps : " + str(rslt2) + "\n" + "-screw pitch : " + str(rslt4) + "\n" + str(result) + " steps/" + str(unit) + "\n\n" )
+
+
 
 if type=="extruder":
 	integer = input("motor steps per revolution : ")
@@ -62,6 +78,14 @@ if type=="extruder":
 		print("steps/mm")
 	if unit=="in":
 		print("steps/in")
+
+	string = input("create configuration file cncofig.txt? 	y/n : ")
+	yn = str(string)
+
+	if yn=="y":
+		with open('cnconfig.txt', 'x') as f:
+			f.write("\nextruder cnc calculation :" + "\n" + "-motor steps per revolution : " + str(rslt1) + "\n" + "-microsteps : " + str(rslt2) + "\n" + "-gear big wheel : " + str(rslt3) + "\n" + "-gear small wheel : " + str(rslt4) + "\n" + "-gear ratio : " + str(rslt3)+ "/" + str(rslt4) + " = " + str(rsltratio) + "\n" + str(result) + " steps/" + str(unit) + "\n\n" )
+
 
 #pasek (ilosc krokow*mikrokrok)/(skok paska*ilosc zebow na zebatce)
 #suba (ilosc krokow*mikrokrok)/(skok suby)
