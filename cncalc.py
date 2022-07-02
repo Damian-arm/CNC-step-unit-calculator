@@ -1,10 +1,11 @@
-
 import math
+import time
 
 print("CNC calculator\n\n")
 
 print("stepper motor with 1,8 degree/step have 200 steps/revolution , motor with 0,9 degree/step have 400 steps/revolution\n")
 print("for extruder direct drive type gear big 1 gear small 1, this will set gear ratio to 1\n\n")
+
 
 string = input("units: mm/in : ")
 unit = str(string)
@@ -32,8 +33,9 @@ if type=="belt":
 	yn = str(string)
 
 	if yn=="y":
-		with open('cnconfig.txt', 'x') as f:
-			f.write("\nbelt cnc calculation :" + "\n" + "-motor steps per revolution : " + str(rslt1) + "\n" + "-microsteps : " + str(rslt2) + "\n" + "-belt pitch : " + str(rslt3) + "\n" + "-pully number of teeth : " + str(rslt4) + "\n" + str(result) + " steps/" + str(unit) + "\n\n" )
+		localtime = time.asctime(time.localtime(time.time()))
+		with open('cnconfig.txt', 'w') as f:
+			f.write(localtime + "\n\nbelt cnc calculation :" + "\n" + "-motor steps per revolution : " + str(rslt1) + "\n" + "-microsteps : " + str(rslt2) + "\n" + "-belt pitch : " + str(rslt3) + "\n" + "-pully number of teeth : " + str(rslt4) + "\n" + str(result) + " steps/" + str(unit) + "\n\n" )
 
 
 if type=="screw":
@@ -54,8 +56,9 @@ if type=="screw":
 	yn = str(string)
 
 	if yn=="y":
-		with open('cnconfig.txt', 'x') as f:
-			f.write("screw cnc calculation :" + "\n" + "-motor steps per revolution : " + str(rslt1) + "\n" + "-microsteps : " + str(rslt2) + "\n" + "-screw pitch : " + str(rslt4) + "\n" + str(result) + " steps/" + str(unit) + "\n\n" )
+		localtime = time.asctime(time.localtime(time.time()))
+		with open('cnconfig.txt', 'w') as f:
+			f.write(localtime + "\n\nscrew cnc calculation :" + "\n" + "-motor steps per revolution : " + str(rslt1) + "\n" + "-microsteps : " + str(rslt2) + "\n" + "-screw pitch : " + str(rslt4) + "\n" + str(result) + " steps/" + str(unit) + "\n\n" )
 
 
 
@@ -83,9 +86,9 @@ if type=="extruder":
 	yn = str(string)
 
 	if yn=="y":
-		with open('cnconfig.txt', 'x') as f:
-			f.write("\nextruder cnc calculation :" + "\n" + "-motor steps per revolution : " + str(rslt1) + "\n" + "-microsteps : " + str(rslt2) + "\n" + "-gear big wheel : " + str(rslt3) + "\n" + "-gear small wheel : " + str(rslt4) + "\n" + "-gear ratio : " + str(rslt3)+ "/" + str(rslt4) + " = " + str(rsltratio) + "\n" + str(result) + " steps/" + str(unit) + "\n\n" )
-
+		localtime = time.asctime(time.localtime(time.time()))
+		with open('cnconfig.txt', 'w') as f:
+			f.write(localtime + "\n\nextruder cnc calculation :" + "\n" + "-motor steps per revolution : " + str(rslt1) + "\n" + "-microsteps : " + str(rslt2) + "\n" + "-gear big wheel : " + str(rslt3) + "\n" + "-gear small wheel : " + str(rslt4) + "\n" + "-gear ratio : " + str(rslt3)+ "/" + str(rslt4) + " = " + str(rsltratio) + "\n" + str(result) + " steps/" + str(unit) + "\n\n" )
 
 #pasek (ilosc krokow*mikrokrok)/(skok paska*ilosc zebow na zebatce)
 #suba (ilosc krokow*mikrokrok)/(skok suby)
